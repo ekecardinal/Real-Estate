@@ -36,8 +36,9 @@ function App() {
             <Route path="submit-property" element={<SubmitProperty />} />
             <Route path="property-submited" element={<PropertySubmited />} />
           </Route> */}
-          <Route exact path="/property/:id" element={<PropertyDetails />} />
-
+          <ProtectedRoute>
+            <Route exact path="/property/:id" element={<PropertyDetails />} />
+          </ProtectedRoute>
           <Route exact path="/sell" element={<Property />} />
           <Route exact path="/buy" component={() => <div>Buy Property</div>} />
 
